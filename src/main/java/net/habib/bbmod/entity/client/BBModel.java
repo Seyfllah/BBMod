@@ -8,9 +8,9 @@ import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 
 public class BBModel extends GeoModel<BBEntity> {
-    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "geo/bb.geo.json");
-    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "textures/entities/bb.png");
-    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "animations/bb.animation.json");
+    private final ResourceLocation model = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "geo/bbv2.geo.json");
+    private final ResourceLocation texture = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "textures/entities/bbv2.png");
+    private final ResourceLocation animations = ResourceLocation.fromNamespaceAndPath(BBMod.MODID, "animations/bbv2.animation.json");
 
     @Override
     public ResourceLocation getModelResource(BBEntity animatable) {
