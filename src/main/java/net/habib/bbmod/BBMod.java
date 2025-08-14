@@ -1,7 +1,10 @@
 package net.habib.bbmod;
 
 import com.mojang.logging.LogUtils;
+import net.habib.bbmod.entity.ModEntities;
+import net.habib.bbmod.entity.client.BBRenderer;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -75,6 +78,8 @@ public class BBMod
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -125,6 +130,7 @@ public class BBMod
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            EntityRenderers.register(ModEntities.BB.get(), BBRenderer::new);
         }
     }
 }
